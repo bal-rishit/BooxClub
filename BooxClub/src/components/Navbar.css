@@ -1,0 +1,125 @@
+/* Navbar styles */
+.navbar {
+    position: relative; /* Ensure relative positioning for absolute positioning of mobile menu */
+    z-index: 1000; /* Ensure navbar appears above other content */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0066b2;
+    color: white;
+  }
+  
+  /* Logo styles */
+  .logo-image {
+    max-width: 100px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  /* Navigation links styles */
+  .nav-links {
+    display: flex;
+    flex-grow: 1; /* Allow the links to grow to fill the space */
+    justify-content: flex-end;
+    list-style: none; /* Remove default list styles */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .nav-link {
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+  
+  /* Hamburger menu styles */
+  .mobile-menu {
+    display: none; /* Hide by default */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute; /* Position hamburger menu icon */
+    top: 50%; /* Center vertically */
+    right: 120px; /* Adjust as needed */
+    transform: translateY(-50%); /* Center vertically */
+  }
+  
+  .line {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  
+  .open:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  
+  .open:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .open:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  
+  .cart {
+    padding: 8px 12px;
+    margin-right: 20px;
+  }
+  
+  /* Login button styles */
+  .login-button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .login-button:hover {
+    background-color: white;
+    color: #333;
+    transition: 300ms;
+  }
+  
+  /* Media query for mobile screens */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none; /* Hide by default */
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 10px 0;
+    }
+  
+    .nav-links.show {
+      display: flex; /* Show when mobile menu is toggled */
+    }
+  
+    .nav-link {
+      margin: 10px 0; /* Adjust margin for mobile view */
+    }
+  
+    .mobile-menu {
+      display: flex; /* Show hamburger menu icon */
+    }
+  
+    .cart {
+      margin-right: 0; /* Remove right margin in mobile view */
+    }
+  }
+  

@@ -1,0 +1,97 @@
+.section__header {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: var(--header-font);
+  text-align: center;
+}
+
+.section__subheader {
+  max-width: 600px;
+  text-align: center;
+}
+
+.discover__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+  
+
+.discover__image {
+  position: relative;
+  width: 100%;
+  height: 200px; /* Set a fixed height for consistency */
+}
+
+.discover__image img {
+  width: 100%;
+  height: 100%; /* Add this line to ensure the image fills its container */
+  object-fit: cover; /* Add this line to maintain aspect ratio and cover the entire space */
+}
+
+.discover__image::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 50%;
+  left: 0;
+  bottom: 0;
+}
+
+.discover__card__content {
+  padding: 1rem;
+  text-align: center;
+}
+
+.discover__card__content h4 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.discover__card__content p {
+  margin-bottom: 1rem;
+}
+
+.discover__btn {
+  padding: 0.75rem 1rem;
+  outline: none;
+  font-size: 1rem;
+  color: black;
+  background-color: transparent;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.discover__btn:hover {
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  transition: 300ms;
+}
+
+.discover__grid {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column; /* Display cards in a single column by default */
+  gap: 2rem;
+}
+
+.discover__card {
+  max-width: calc(100% - 2rem); /* Take up full width of the container */
+  margin-bottom: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .discover__grid {
+    flex-direction: row; /* Switch to row layout on larger screens */
+    justify-content: center; /* Center cards horizontally */
+  }
+
+  .discover__card {
+    max-width: calc(33.33% - 2rem); /* Display three cards per row */
+    flex: 1; /* Let cards take up equal space */
+  }
+}
